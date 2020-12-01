@@ -67,7 +67,7 @@ class Registration:
 		query2=f"INSERT INTO `activation` VALUES({userId},{otp})"
 		self.db.executeQuery(self.con,query2,ReturnMode=False)
 		message_text=f"127.0.0.1:5000/activate?otp={otp}&userId={userId}  is your link. Either click it or paste it into your browser. \n\n Thanks & Regards,\nMed-desk\n\n This is a system generated mail."
-		quickstart.driver("DigiDhan20@gmail.com", res[0][1], "Account Verification", message_text)
+		quickstart.driver(senders_mail, res[0][1], "Account Verification", message_text)
 		return
 class otpValidator:
 	def __init__(self):
