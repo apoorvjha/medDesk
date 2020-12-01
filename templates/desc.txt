@@ -1,0 +1,1 @@
+This folder contains the front end templates that the flask backend will use to communicate with the user.
