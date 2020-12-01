@@ -23,7 +23,7 @@ def registerBack():
 		email=request.form['email']
 		profilePic=request.files['profilePic']
 		fileName=userId + secure_filename(profilePic.filename)
-		profilePic.save(url_for('static')+'/PROFILE_PIC/'+fileName)
+		profilePic.save('static/PROFILE_PIC/'+fileName)
 	else:
 		flash("Unsupported method of registration! Please use the registration tab instead.",'alert alert-danger')
 		return redirect(url_for("HomePage"))
