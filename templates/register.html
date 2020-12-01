@@ -1,0 +1,47 @@
+
+{% if session['username'] %}
+{{ redirect(url_for('HomePage')) }}
+{% endif %}
+
+
+{% extends 'base.html' %}
+{% block title %} Register {% endblock %}
+{% block main %}
+
+
+
+<div class="register-form">
+<form method="post" action="registerBack" enctype="multipart/form-data" onSubmit="return validate()">
+<table>
+<tr>
+<td><input type="text" id="userId" name="userId" placeholder=" Username" onChange="validate()" required></td><td><small id="idcheck" class="text-muted">
+    Length of user name should be in between 5-20 characters!
+    </span></td>
+</tr>
+<tr>
+<td><input type="password" id="password" name="password" placeholder=" Password" onChange="validate()" required></td><td><small id="passcheck" class="text-muted">
+      Length of Password should be in between 6-15 characters!
+    </small></td>
+</tr>
+<tr>
+<td><input type="email" id="email" name="email" placeholder=" email" onChange="validate()" required></td>
+<td><small id="emailcheck" class="text-muted">
+    Email should be of the form sample@example.com 
+    </small></td>
+
+</tr>
+<tr>
+<td><input type="file" id="profilePic" name="profilePic" placeholder=" profilePic" onChange="validate()" required></td>
+<td><small id="filecheck" class="text-muted">
+    Only JPEG, JPG, PNG and GIF formats are supported!
+    </small></td>
+</tr>
+<tr>
+<td><input type="submit" value="register" id="sbt-btn"></td>
+<td><input type="reset" value="reset"></td>
+</tr>
+</table>
+</form>
+</div>
+
+{% endblock %}

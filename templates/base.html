@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="static/index.css">
+    <!-- Bootstrap CSS 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+<link rel="shortcut icon" href="static/SUPPORT_PIC/logo.jpeg" /> <!-- For setting custom mini icon on the title tab of web page -->
+ <!-- jQuery first, then Popper.js, then Bootstrap JS 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>-->
+    <script> 
+
+
+function validate(){
+	var fInput=document.getElementById("profilePic");
+	var email=document.getElementById("email");
+	var userId=document.getElementById("userId");
+	var password=document.getElementById("password");
+	var flag=0;
+	if(fInput.value.length!=0){
+		/* file validation */
+		var validExt= /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+		if (!validExt.exec(fInput.value)) {
+			document.getElementById("filecheck").innerHTML='<font color="red">Only JPEG, JPG, PNG and GIF formats are supported!</font>';
+fInput.style.borderColor="red";
+			flag=0;
+		}
+		else{
+			document.getElementById("filecheck").innerHTML='<font color="green">Looks good!</font>';
+			flag=1;
+fInput.style.borderColor="green";
+		} 
+        }
+	if(email.value.length!=0){
+		/* email validation */
+		var res=email.value.split('@');
+		var ext = /(\.com|\.in|\.ac.in|\.net)$/i;
+		if (res[0].length<2 || res[1].length<4 || !ext.exec(res[1]) || res[1]==undefined || res[0]==undefined){
+			document.getElementById("emailcheck").innerHTML='<font color="red">Please enter a valid email!</font>';
+			flag=0;
+email.style.borderColor="red";
+		}
+		else{
+			document.getElementById("emailcheck").innerHTML='<font color="green">Looks good!</font>';
+			flag=1;
+email.style.borderColor="green";
+		} 
+        }
+
+	if(userId.value.length!=0){
+		/* userId validation */
+		var res=userId.value
+		if (res.length<5 || res.length>20) {
+			document.getElementById("idcheck").innerHTML='<font color="red">Length of User Id should be in between 5-20 characters!</font>';
+userId.style.borderColor="red";
+			flag=0;
+		}
+		else{
+			document.getElementById("idcheck").innerHTML='<font color="green">Looks good!</font>';
+userId.style.borderColor="green";
+			flag=1;
+		} 
+        }
+
+	if(password.value.length!=0){
+		/* password validation */
+		var res=password.value
+		if (res.length<6 || res.length>15) {
+			document.getElementById("passcheck").innerHTML='<font color="red">length of Password should be in between 6-15 characters!</font>';
+password.style.borderColor="red";
+			flag=0;
+		}
+		else{
+			document.getElementById("passcheck").innerHTML='<font color="green">Looks good!</font>';
+password.style.borderColor="green";
+			flag=1;
+		}
+	 
+        }
+
+if(flag==1){
+return true;
+}
+else{
+return false;
+}	
+}
+function validate_login(){
+	var userId=document.getElementById("userId");
+	var password=document.getElementById("password");
+	var flag=0;
+
+	if(userId.value.length!=0){
+		/* userId validation */
+		var res=userId.value
+		if (res.length<5 || res.length>20) {
+			document.getElementById("idcheck").innerHTML='<font color="red">&nbsp;&nbsp;&nbsp;&nbsp;Length of User Id should be in between 5-20 characters!</font>';
+userId.style.borderColor="red";
+			flag=0;
+		}
+		else{
+			document.getElementById("idcheck").innerHTML='<font color="green">&nbsp;&nbsp;&nbsp;&nbsp;Looks good!</font>';
+			flag=1;
+userId.style.borderColor="green";
+		} 
+        }
+
+	if(password.value.length!=0){
+		/* password validation */
+		var res=password.value
+		if (res.length<6 || res.length>15) {
+			document.getElementById("passcheck").innerHTML='<font color="red">&nbsp;&nbsp;&nbsp;&nbsp;Length of Password should be in between 6-15 characters!</font>';
+password.style.borderColor="red";
+			flag=0;
+		}
+		else{
+			document.getElementById("passcheck").innerHTML='<font color="green">&nbsp;&nbsp;&nbsp;&nbsp;Looks good!</font>';
+			flag=1;
+password.style.borderColor="green";
+		}
+	 
+        }
+
+if(flag==1){
+return true;
+}
+else{
+return false;
+}	
+
+}
+function remove_msg(){
+if(document.getElementById("alert alert-success")!=null){
+document.getElementById("alert alert-success").style.display='none';
+}
+if(document.getElementById("alert alert-danger")!=null){
+document.getElementById("alert alert-danger").style.display='none';
+}
+}
+
+
+    </script>
+<title>{% block title %}{% endblock %}</title>
+</head>
+<body onLoad="setInterval(function(){remove_msg();},3000)">
+{% with messages=get_flashed_messages(with_categories=True) %}
+	{% if messages %}
+		{% for category,message in messages %}
+			<div class="{{ category }}" id="{{ category }}">
+				{{ message }}			
+			</div>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+
+
+
+<nav class="navbar navbar-inverse" height="100px.">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ url_for('HomePage') }}">Med Desk</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    {% if session['username'] %}
+    	  <ul class="nav navbar-nav">
+	
+		<li><a class="active" href="#">Home</a></li>
+		<li><a href="{{ url_for('aboutus') }}">About us</a></li>
+		<li><a href="{{ url_for('ventures') }}">Ventures</a></li>
+		<li><a href="{{ url_for('messenger') }}">Help desk</a></li>
+		<li><a href="{{ url_for('contactus') }}">Contact us</a></li>
+		<li><a href="{{ url_for('settings') }}">Settings</a></li>
+		{% if session['type']=='admin' %}
+			<li><a href="{{ url_for('admin') }}">Admin Pannel</a></li>
+		{% endif %}
+      	</ul>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="{{ session['profilePic'] }}" class="profile">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+
+     {% else %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('register') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+     {% endif %}
+    </div>
+  </div>
+</nav>
+
+{% block main %}
+{% endblock %}
+</body>
+</html>

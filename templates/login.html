@@ -1,0 +1,40 @@
+
+{% if session['username'] %}
+{{ redirect(url_for('HomePage')) }}
+{% endif %}
+
+{% extends 'base.html' %}
+{% block title %} login {% endblock %}
+{% block main %}
+
+<div class="login-form"></div>
+<form method="post" action="loginBack" onSubmit="return validate_login();">
+<table>
+<tr>
+<td><div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text" id="userId" name="userId" placeholder=" Username" onChange="validate_login()" required>
+  </div></td><td><small id="idcheck" class="text-muted">
+    &nbsp;&nbsp;&nbsp;&nbsp;Length of user name should be in between 5-20 characters!
+    </span></td>
+</tr>
+<tr>
+<td><div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input type="password" id="password" name="password" placeholder=" Password" onChange="validate_login()" required>
+  </div></td><td><small id="passcheck" class="text-muted">
+      &nbsp;&nbsp;&nbsp;&nbsp;Length of Password should be in between 6-15 characters!
+    </small></td>
+</tr><tr>
+<td><input type="submit" value="login"></td>
+<td><input type="reset" value="reset"></td>
+</tr>
+</table>
+</form>
+
+{% endblock %}
+
+
+
+
+
