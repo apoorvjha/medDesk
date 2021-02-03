@@ -1,0 +1,1 @@
+This folder contains uploaded profile pictures of users and administrators across the system.
