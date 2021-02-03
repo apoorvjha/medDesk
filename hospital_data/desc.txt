@@ -1,0 +1,1 @@
+This folder contains preprocessed data of hospitals across India along with their geolocations.
