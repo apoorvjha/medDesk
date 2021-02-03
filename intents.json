@@ -1,0 +1,117 @@
+{
+"intents": 
+	[
+	{
+		"tag": "greeting", 
+		"pattern": ["Hi", "Hey there!", "Hello", "Hola"], 
+		"responses": ["Hi there! How may I help You?", "Hello buddy! What can I do for you?", "Hola! Tell me What can I do for you?"], 
+		"action": "", 
+		"context_set": ""
+	},
+	 
+	{
+		"tag": "goodbye", 
+		"pattern": ["cya", "see you later!", "Good bye!", "I am leaving", "have a good day"], 
+		"responses": ["nice talking to you!", "Hope you are satisfied with my service!"], 
+		"action": "", 
+		"context_set": ""
+	},
+	 
+	{
+		"tag": "name", 
+		"pattern": ["Whats your name?", "what should i call you?", "your name?", "may i know your name?", "tell me your name"], 
+		"responses": ["My name is MedBot.", "You can call me MedBot."], 
+		"action": "", 
+		"context_set": ""
+	}, 
+
+	{
+		"tag": "venue", 
+		"pattern": ["Where do you live?", "whats your current location?", "your home?"], 
+		"responses": ["I live in a cozy server."], 
+		"action": "", 
+		"context_set": ""
+	}, 
+
+	{
+		"tag": "start_conv1", 
+		"pattern": ["I want to know?", "I have a query!", "what can you do?", "can you find?", "I am suffering", "I am not feeling well."], 
+		"responses": ["I can find hospitals nearby you based on the information you provide to me."], 
+		"action": "", 
+		"context_set": ""
+	}, 
+
+	{
+		"tag": "symptom1", 
+		"pattern": ["I am suffering from fever", "fever", "cough and cold", "fever, cough and cold", "sour throat"], 
+		"responses": ["Finding general physician nearby you."], 
+		"action": "General Physician | Corona care center", 
+		"context_set": ""
+	}, 
+		
+	{
+		"tag": "symptom2", 
+		"pattern": ["vomitting", "stomach pain", "vommiting and gas and stomach ache"], 
+		"responses": ["Finding Gynacologist nearby you!"], 
+		"action": "Gynacologist | Ultrasound lab", 
+		"context_set": ""
+	}, 
+	
+	{
+		"tag": "symptom4", 
+		"pattern": ["pregnancy", "I am pregnant", "waterbroke while pregnant", " i am in labour"], 
+		"responses": ["Finding best maternity care center nearby you"], 
+		"action": "Maternity care | Gynacologist | Ultrasound lab", 
+		"context_set": ""
+	}, 
+
+	{
+		"tag": "symptom3", 
+		"pattern": ["Head ache", "headache", "pain across forehead"], 
+		"responses": ["Finding neurologist nearby you!"], 
+		"action": "Neurologist | CT scan lab | MRI scan lab", 
+		"context_set": ""
+	}, 
+
+	{
+		"tag": "symptom5", 
+		"pattern": ["Ear pain", "throat pain", "nose ailment", "neck problem", "pain in neck"], 
+		"responses": ["Finding ENT specialist nearby you!"], 
+		"action": "ENT | X-ray", 
+		"context_set": ""
+	}, 
+
+	{
+		"tag": "symptom6", 
+		"pattern": ["bone fracture", "fracture", "broken leg", "broken bone"], 
+		"responses": ["Finding orthopedist specialist nearby you!"], 
+		"action": "Orthopedist | X-ray", 
+		"context_set": ""
+	}, 
+
+	{
+		"tag": "symptom7", 
+		"pattern": ["Tooth ache", "toothache", "pain in teeth", "tooth disaligned", "cavity"], 
+		"responses": ["Finding dentist nearby you!"], 
+		"action": "Dentist | X-ray | Root canal", 
+		"context_set": ""
+	}, 
+	
+	{
+		"tag": "symptom8", 
+		"pattern": ["digestion problem", "vomitting", "stomach pain"], 
+		"responses": ["Finding Gyanocologist nearby you!"], 
+		"action": "Gynacologist", 
+		"context_set": ""
+	}, 
+	
+	{
+		"tag": "symptom9", 
+		"pattern": ["Yellowness in nails", "yelloish eyes", "digestion problem"], 
+		"responses": ["Finding Gyanocologist nearby you!"], 
+		"action": "Gynacologist", 
+		"context_set": ""
+	}
+]
+
+}
