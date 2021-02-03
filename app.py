@@ -10,7 +10,7 @@ import gmaps
 from ipywidgets.embed import embed_minimal_html
 app=Flask(__name__)
 app.secret_key='QwErTY9934@123'
-gmaps.configure(api_key='AIzaSyC2kcDEknsmOZ5wetaC2fUDZ6d_efcrzfk')
+gmaps.configure(api_key='API_KEY_GOES_HERE')
 @app.route('/')
 def HomePage():
 	return render_template('index.html')
