@@ -1,0 +1,1 @@
+This folder contains the stylesheet, javascript and images used in the web application.
